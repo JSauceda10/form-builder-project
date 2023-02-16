@@ -1,0 +1,16 @@
+.list-container {
+  width: 500px;
+  height: 500px;
+  content: "";
+  background-color: lightgray;
+}
+
+.btn, .btn-primary {
+  width: auto;
+  display: flex;
+  padding: 25px 35px;
+  height: auto;
+  align-items: center;
+  
+  
+}

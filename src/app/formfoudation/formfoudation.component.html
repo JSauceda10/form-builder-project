@@ -1,0 +1,11 @@
+<form class="list-container" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <formly-form
+               cdkDropList
+               id="list-two" [cdkDropListConnectedTo]="['list-one']"
+               [cdkDropListData]="fields"
+               (cdkDropListDropped)="drop($event)"
+               [model]="model" [fields]="fields" [options]="options" [form]="form">
+
+  </formly-form>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
