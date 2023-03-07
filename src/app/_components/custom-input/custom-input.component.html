@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="input" placeholder="name" name="name">
+    <label for="name">{{label}}</label>
+  </div>
+
+  <app-editor-panel [componentType] = "'custom-input'" (valueChange)="updateLabel($event)"></app-editor-panel>
+
+</div>
+

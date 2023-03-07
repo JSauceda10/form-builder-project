@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="mb-3">
+    <label for="dateTimeLocal">{{label}}</label>
+    <input class="form-control" type="datetime-local" id="dateTimeLocal" name="dateTimeLocal">
+  </div>
+
+  <app-editor-panel [componentType] = "'datetime-local'" (valueChange)="updateLabel($event)"></app-editor-panel>
+
+  
+</div>
+

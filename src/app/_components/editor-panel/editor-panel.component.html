@@ -1,0 +1,33 @@
+<div class="editor-panel">
+  <div class="property-editor-container">
+    <input class="editor-toggle" type="checkbox">
+    <i class="fa-solid fa-gear"></i>
+    <div class="property-editor-modal">
+
+      <label>{{componentType}}</label>
+
+      <div class="form-floating mb-3 mt-3">
+        <input [(ngModel)]="label" (ngModelChange)="changeFn()" type="text" id="lText" placeholder="label" name="lText" class="form-control edit-input">
+        <label for="lText">Label</label>
+      </div>
+
+      <div class="form-floating mb-3 mt-3 add-radio-control" *ngIf="componentType === 'custom-radio'">
+        <input [(ngModel)]="newOptionName" class="form-control" id="addRadioOption" type="text" name="addRadio" placeholder="Option" />
+        <label for="addRadioOption">Add New Option</label>
+        
+        <button class="add-button" (click)="addNewRadioButton()"><i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+
+  <button class="delete-button">
+    <i class="fa-solid fa-trash-can"></i>
+  </button>
+
+
+
+</div>

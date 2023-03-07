@@ -1,0 +1,39 @@
+.readyElementList {
+  border-bottom: 2px solid;
+  margin-bottom: 1em;
+}
+
+.readyElementList label {
+    margin-right: 20px;
+}
+
+.element-list-body {
+  background-color: powderblue;
+  width:auto;
+  padding: 17px;
+  border-radius: 25px;
+}
+
+.container{
+    margin-top: 25vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: poppins;
+}
+
+.draggable-icon{
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 0 8px -6px black;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 0.25rem;
+    transition: all 0.5s;
+}
+
+.draggable-icon:hover {
+    box-shadow: 0 0 8px -2px black;
+    
+}

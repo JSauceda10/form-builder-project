@@ -15,37 +15,103 @@ export class AppComponent implements OnInit {
 
   title = 'form-builder-project';
 
-  formlyConfig = [
+  formlyConfig: FormlyFieldConfig[] = [
     {
-      key: 'email',
+      key: 'Input',
       type: 'input',
       templateOptions: {
-        type: 'email',
-        label: 'Email address',
-        placeholder: 'Enter email',
+        label: 'Input',
+        placeholder: 'Placeholder',
+        description: 'Description',
         required: true,
-      }
+      },
     },
     {
-      key: 'gender',
+      key: 'Radio',
       type: 'radio',
       templateOptions: {
-        type: 'radio',
-        label: 'Gender',
+        label: 'Radio',
+        placeholder: 'Placeholder',
+        description: 'Description',
         required: true,
-        name: 'gender',
-        options: [{ value: 'Male', key: 'M' }, { value: 'Female', key: 'F' }]
+        options: [
+          { value: 1, label: 'Option 1' },
+          { value: 2, label: 'Option 2' },
+          { value: 3, label: 'Option 3', disabled: true },
+
+        ],
+      },
+    },
+    {
+      key: 'Select',
+      type: 'select',
+      templateOptions: {
+        label: 'Select',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
+        options: [
+          { value: 1, label: 'Option 1' },
+          { value: 2, label: 'Option 2' },
+          { value: 3, label: 'Option 3' },
+          { value: 4, label: 'Option 4', disabled: true },
+        ],
+      },
+    },
+    {
+      key: 'newInputField',
+      type: 'input-field',
+      templateOptions: {
+        label: 'Select',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
       }
     },
   ]
 
-  readyMadeElements = [
+  formlyConfig1: FormlyFieldConfig[] = [
     {
-      for: "name",
+      key: 'myGroup',
+      templateOptions: {
+        label: 'A registration form',
+        description: 'A simple form example.',
+      },
+      fieldGroup: [
+        {
+          type: 'datetime-local',
+          templateOptions: {
+            type: 'datetime-local',
+            label: 'datetime-local',
+            required: true,
+            name: 'gender',
+
+          },
+          key: 'date-local_',
+        },
+        {
+          type: 'custom-radio',
+          templateOptions: {
+            type: 'datetime-local',
+            label: 'datetime-local',
+            required: true,
+            name: 'radio',
+
+          },
+          key: 'radio_',
+        },
+        
+      ],
+    },
+  ];
+
+  /*readyMadeElements = [
+    {
+      for: "input",
       type: "input",
-      id: "name",
-      name: "name",
-      placeHolder: "name",
+      id: "input",
+      name: "input",
+      placeHolder: "input",
     },
     {
       for: "radio group",
@@ -56,9 +122,63 @@ export class AppComponent implements OnInit {
       label: "radio",
       howMany: 2,
 
+    },
+
+    {
+      for: "checkbox",
+      type: "checkbox",
+      id: "checkbox",
+      name: "checkbox",
+      value: "checkbox",
+      label: "checkbox",
+      howMany: 2,
+
+    },
+    {
+      for: "date",
+      type: "date-field",
+      id: "date",
+      name: "date",
+      value: "date",
+      label: "date",
+
+
+    },
+    {
+      for: "datetime-local",
+      type: "datetime-local",
+      id: "datetime-local",
+      name: "datetime-local",
+      value: "datetime-local",
+      label: "datetime-local",
+    },
+    {
+      for: "textarea",
+      type: "textarea",
+      id: "textarea",
+      name: "textarea",
+      value: "textarea",
+      label: "textarea",
+
+
     }
-    
-  ]
+
+  ];*/
+
+  readyMadeElementsAlternative = [
+    { type: "button" },
+    { type: "input" },
+    { type: "text-area" },
+    { type: "drop-down" },
+    { type: "radio" },
+    { type: "check" },
+    { type: "paragraph" },
+    { type: "image" },
+    { type: "spacer" },
+    { type: "divider" },
+    { type: "social" },
+    { type: "uploader" },
+  ];
 
   
 

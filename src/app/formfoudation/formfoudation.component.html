@@ -1,5 +1,6 @@
-<form class="list-container" [formGroup]="form" (ngSubmit)="onSubmit()">
+<form class="list-container" style="margin:25px; padding:25px;" [formGroup]="form" (ngSubmit)="onSubmit()">
   <formly-form
+               class="formly-form"
                cdkDropList
                id="list-two" [cdkDropListConnectedTo]="['list-one']"
                [cdkDropListData]="fields"

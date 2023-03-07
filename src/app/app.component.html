@@ -1,23 +1,193 @@
-<div cdkDropList id="list-one"
-     [cdkDropListConnectedTo]="['list-two']"
-     [cdkDropListData]="readyMadeElements"
-     >
-  <div cdkDrag class="readyElementList" *ngFor="let item of readyMadeElements" [ngSwitch]=item.type>
-    <div *ngSwitchCase="'input'">
-      <label for={{item.for}}>{{item.for}}</label>
-      <input type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
-    </div>
+<div class="container">
+  
+  <div class="element-list-body">
+    <h1>Widget Pallet</h1>
+    <div cdkDropList id="list-one"
+         cdkDropListSortingDisabled
+         [cdkDropListConnectedTo]="['list-two']"
+         [cdkDropListData]="readyMadeElementsAlternative">
+      <!--<div cdkDrag class="readyElementList" *ngFor="let item of readyMadeElements" [ngSwitch]=item.type>
+        <div class="element-item" *ngSwitchCase="'input'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
 
-    <div *ngSwitchCase="'radio'">
-      <div *ngFor="let elem of numSequence(item.howMany!); index as i">
-        <label for={{item.for}}>{{item.label}} {{i+1}}</label>
-        <input type="{{item.type}}" id="{{item.id}} {{i+1}}" name={{item.name}} value="{{item.value}} {{i+1}}"><br><br>
+        <div class="element-item" *ngSwitchCase="'textarea'">
+          <textarea class="form-control" name="message" rows="10" cols="30">
+            Example text area
+          </textarea>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'radio'">
+          <div *ngFor="let elem of numSequence(item.howMany!); index as i">
+            <label for={{item.for}}>{{item.label}} {{i+1}}</label>
+            <input class="form-check-input" type="{{item.type}}" id="{{item.id}} {{i+1}}" name={{item.name}} value="{{item.value}} {{i+1}}"><br><br>
+          </div>
+
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'checkbox'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-check-input" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'date-field'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="date" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'datetime-local'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'email'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'file'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'month'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'week'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'number'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'password'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'range'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'reset'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'search'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'search'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'tel'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+        <div class="element-item" *ngSwitchCase="'time'">
+          <label for={{item.for}}>{{item.for}}</label>
+          <input class="form-control" type="{{item.type}}" id="{{item.id}}" name="{{item.name}}"><br><br>
+        </div>
+
+      </div>-->
+      <div cdkDrag class="alternative-element-draggables" *ngFor="let item of readyMadeElementsAlternative" [ngSwitch]=item.type>
+        <div class="draggable-icon" *ngSwitchCase="'button'">
+          <p><i class="fa-solid fa-square"></i></p>
+          <span>Button</span>
+          <div *cdkDragPreview>
+            <button class="btn btn-primary">Button</button>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'input'">
+          <p><i class="fa-regular fa-square"></i></p>
+          <span>Input Field</span>
+          <div *cdkDragPreview>
+            <input type="text" class="form-control">Text Field
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'text-area'">
+          <p><i class="fa-regular fa-window-maximize"></i></p>
+          <span>Text Area/Comment Section</span>
+          <div *cdkDragPreview>
+            <textarea class="form-control" name="message" rows="2" cols="10">
+              Text Area
+            </textarea>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'drop-down'">
+          <p><i class="fa-regular fa-square-caret-down"></i></p>
+          <span>Dropdown</span>
+          <div *cdkDragPreview>
+            <select class="form-control" id="cars" name="cars">
+              <option value="select1">select 1</option>
+              <option value="select2">select 2</option>
+              
+            </select>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'radio'">
+          <p><i class="fa-solid fa-list-ul"></i></p>
+          <span>Radio Buttons</span>
+          <div *cdkDragPreview>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'check'">
+          <p><i class="fa-regular fa-square-check"></i></p>
+          <span>Checkbox</span>
+          <div *cdkDragPreview class="form-check">
+            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+            <label class="form-check-label">Option 1</label>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'paragraph'">
+          <p><i class="fa-solid fa-language"></i></p>
+          <span>Paragraph</span>
+          <div *cdkDragPreview class="container">
+            <p>This is some text.</p>
+          </div>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'image'">
+          <p><i class="fa-regular fa-image"></i></p>
+          <span>Picture</span>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'spacer'">
+          <p><i class="fa-solid fa-arrows-up-down"></i></p>
+          <span>Spacer</span>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'divider'">
+          <p><i class="fa-solid fa-grip-lines"></i></p>
+          <span>Divider</span>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'social'">
+          <p><i class="fa-solid fa-share-nodes"></i></p>
+          <span>Social</span>
+        </div>
+        <div class="draggable-icon" *ngSwitchCase="'uploader'">
+          <p><i class="fa-solid fa-upload"></i></p>
+          <span>Uploader</span>
+        </div>
       </div>
-
     </div>
-
   </div>
+
+  <app-formfoudation [formlyArray]="formlyConfig1"></app-formfoudation>
 </div>
-<app-formfoudation [formlyArray]="formlyConfig"></app-formfoudation>
+
 
 

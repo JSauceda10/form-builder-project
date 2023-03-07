@@ -4,7 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\formfoudation",
-    "\\src\\app\\_models"
+    "\\src\\app\\_components",
+    "\\src\\app\\_components\\custom-checkbox",
+    "\\src\\app\\_components\\editor-panel",
+    "\\src\\assets"
   ],
   "SelectedNode": "\\src\\app\\formfoudation\\formfoudation.component.ts",
   "PreviewInSolutionExplorer": false

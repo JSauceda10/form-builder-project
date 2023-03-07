@@ -1,0 +1,60 @@
+.editor-panel {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-gear {
+  margin-right: 1vw;
+}
+
+.property-editor-modal {
+    display: none;
+}
+
+.editor-panel input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 1.3em;
+  width: 1.3em;
+}
+
+
+.editor-panel input[type=checkbox]:checked ~ .property-editor-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: lightblue;
+  margin-top: 1.8em;
+  margin-left: -2.2vw;
+  
+  
+}
+
+.property-editor-modal::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin-top: -23px;
+  border-bottom: 15px solid lightblue;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.delete-button, .add-button {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
+
+
+.delete-button:hover, .add-button:hover {
+  color: lightcoral;
+}
